@@ -5,6 +5,8 @@ orbs:
 workflows:
   build-and-deploy:
     jobs:
+      - setup_remote_docker:
+          version: 20.10.14
       - aws-ecr/build_and_push_image:
           account-url: "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
           repo: "${AWS_RESOURCE_NAME_PREFIX}-ecr"

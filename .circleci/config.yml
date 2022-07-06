@@ -8,7 +8,7 @@ workflows:
       - aws-ecr/build-and-push-image:
           repo: "${AWS_RESOURCE_NAME_PREFIX}-ecr"
           registry-id: AWS_ACCOUNT_ID
-          region: AWS_REGION
+          region: '${AWS_REGION}'
           tag: "latest"
       - aws-ecs/deploy-service-update:
           requires:
